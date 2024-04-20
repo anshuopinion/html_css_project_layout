@@ -1,0 +1,115 @@
+:root {
+  --body: #a70000;
+  --brown: #5e0808;
+  --red: #ff0000;
+  --card: #ffd8d8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--body);
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px 16px;
+}
+
+nav {
+  background-color: var(--brown);
+}
+
+.navigation {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 93px;
+}
+.left_nav {
+  display: flex;
+  max-width: 488px;
+  height: 100%;
+  width: 100%;
+  gap: 8px;
+  align-items: center;
+}
+
+.logo {
+  background: var(--red);
+  height: 40px;
+  min-width: 160px;
+}
+.link {
+  background: var(--red);
+  height: 40px;
+  width: 100%;
+}
+
+.avatar {
+  background: var(--red);
+  height: 64px;
+  width: 64px;
+  border-radius: 100%;
+}
+
+main {
+  padding-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+/* Card Styling  */
+
+.card {
+  background-color: var(--card);
+  padding: 24px;
+  border-radius: 12px;
+  display: flex;
+  gap: 24px;
+}
+
+.circle {
+  background-color: var(--red);
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+}
+
+.line {
+  height: 24px;
+  width: 100%;
+  background-color: var(--brown);
+}
+
+.line_container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+/* big display */
+@media screen and (width > 1200px) {
+}
+/* Tablet */
+@media screen and (width < 1200px) and (width > 450px) {
+}
+/* Phone  */
+@media screen and (width < 600px) {
+  .logo {
+    background: var(--red);
+    height: 40px;
+    min-width: 70px;
+  }
+  .avatar {
+    height: 48px;
+    width: 48px;
+  }
+  .left_nav {
+    max-width: 266px;
+  }
+}
