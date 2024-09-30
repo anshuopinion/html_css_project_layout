@@ -1,3 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@font-face {
+  font-family: HelveticaNeue;
+  src: url("./fonts/helvetica/HelveticaNeueMedium.otf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: HelveticaNeue;
+  src: url("./fonts/helvetica/HelveticaNeueRoman.otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: HelveticaNeue;
+  src: url("./fonts/helvetica/Bold.otf");
+  font-weight: 700;
+}
+
+:root {
+  --bg-primary: #000;
+  --bg-secondary: #191919;
+  --green: #def3df;
+  --light: #fff;
+  --primaryFont: HelveticaNeue, sans-serif;
+  --secondaryFont: Roboto, sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,20 +32,346 @@
 
 h1 {
   font-size: 85px;
+  font-family: var(--secondaryFont);
 }
 
 h2 {
+  font-family: var(--secondaryFont);
   font-size: 48px;
 }
 
 h3 {
+  font-family: var(--secondaryFont);
   font-size: 24px;
 }
 
 h4 {
   font-size: 18px;
+  font-weight: 400;
 }
 
 p {
   font-size: 16px;
+  line-height: 28px;
+}
+
+html,
+body {
+  background: var(--bg-primary);
+  color: var(--light);
+  font-family: var(--primaryFont);
+}
+
+button {
+  border: 1px solid var(--light);
+  border-radius: 100px;
+  width: 180px;
+  height: 50px;
+  background: var(--green);
+  color: var(--bg-primary);
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    background: var(--light);
+    color: var(--bg-primary);
+  }
+}
+
+/* Hero Section */
+.hero_section {
+  position: relative;
+  background-color: var(--bg-secondary);
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+
+  nav {
+    min-width: 276px;
+    display: flex;
+    border-right: 1px solid var(--light);
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 80px;
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+
+      li {
+        list-style-type: none;
+
+        a {
+          text-decoration: none;
+          color: white;
+          &:hover {
+            color: var(--green);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .linkedin {
+      img {
+        height: 50px;
+        width: 50px;
+      }
+    }
+  }
+
+  .header {
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 20px;
+    width: 100%;
+    position: relative;
+    button {
+      position: absolute;
+      right: 50px;
+      top: 50px;
+    }
+
+    .basic_details {
+      .avatar {
+        align-items: center;
+        display: flex;
+        gap: 10px;
+
+        div {
+          background: var(--light);
+          height: 5px;
+          width: 5px;
+          border-radius: 50%;
+        }
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+
+  .top_bg {
+    position: absolute;
+    top: -120px;
+    right: -60%;
+  }
+}
+
+/* About Section */
+
+.about_section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 80px;
+  gap: 100px;
+  .image_container {
+    img {
+      height: 80vh;
+    }
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+/* Experience Section */
+
+.experience_section {
+  background-color: var(--bg-secondary);
+  padding: 120px 0px;
+  display: flex;
+  flex-direction: column;
+  padding: 110px 80px;
+  gap: 40px;
+  h2 {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+  }
+
+  .experience_card {
+    padding: 40px;
+    border: 1px solid var(--green);
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .tag {
+      background-color: var(--green);
+      color: var(--bg-primary);
+      padding: 5px 20px;
+      border-radius: 9999px;
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    h3 {
+      color: var(--green);
+    }
+
+    h4 {
+      color: var(--green);
+    }
+    p {
+      max-width: 50%;
+    }
+  }
+}
+
+/* Project Section */
+
+.project_section {
+  background-color: var(--bg-secondary);
+  h2 {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  padding: 110px 80px;
+  .project_card {
+    padding: 60px 40px;
+    border: 1px solid var(--green);
+    border-radius: 10px;
+    display: flex;
+    gap: 40px;
+
+    .left {
+      .project_overview {
+        .title {
+          align-items: center;
+          display: flex;
+          gap: 28px;
+          .number {
+            background-color: var(--green);
+            color: var(--bg-primary);
+            width: 50px;
+            height: 50px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            border-radius: 9999px;
+            font-size: 18px;
+            font-weight: bold;
+          }
+        }
+        p {
+          margin-top: 20px;
+        }
+        margin-bottom: 20px;
+      }
+
+      .key_feature {
+        h3 {
+          margin-bottom: 16px;
+        }
+        ul {
+          padding-left: 20px;
+          li {
+            margin-top: 8px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+    .right {
+      .image_container {
+      }
+
+      .technology {
+        margin-top: 20px;
+        h3 {
+          margin-bottom: 16px;
+        }
+        ul {
+          padding-left: 20px;
+          li {
+            margin-top: 8px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* My Skills Section */
+
+.skill_section {
+  background-color: var(--bg-secondary);
+  padding: 110px 80px;
+  gap: 32px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  h2 {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .skill {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+/* Contact Section  */
+
+.contact_section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 80px;
+  gap: 100px;
+  .image_container {
+    img {
+      height: 80vh;
+    }
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    p {
+      max-width: 60%;
+    }
+    .linkedin_container {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+
+      .linkedin {
+        img {
+          height: 50px;
+          width: 50px;
+        }
+      }
+    }
+  }
+}
+
+.bar {
+  background: var(--green);
+  border-radius: 999px;
+  height: 5px;
 }
